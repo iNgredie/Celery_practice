@@ -132,3 +132,5 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '1469cb2a276b4b'
 EMAIL_HOST_PASSWORD = '219dff6e6d60bd'
 EMAIL_PORT = '2525'
+
+CELERY_BROKER_URL = 'redis://redis:6379'

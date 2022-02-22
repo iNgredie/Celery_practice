@@ -12,3 +12,11 @@ services:
     ports:
       - '8000:8000'
     command: ['python3', './src/manage.py', 'runserver', '0.0.0.0:8000']
+
+  worker:
+    restart: always
+    build:
+      context: ./webapp
+    volumes:
+    - ./cats:/app/src/cats
+    command: ['celery', '--workdir=./src', '-A', 'config', 'worker' ]
